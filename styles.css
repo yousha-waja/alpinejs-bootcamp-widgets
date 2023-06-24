@@ -1,0 +1,14 @@
+.codex{
+    width: 90dvh; 
+      height: auto; 
+}
+
+.bootcamp {
+    width: 25dvh;
+}
+
+.btn-spacing {
+    margin-right: 0.1em;
+    width: 5.4em;
+    font-size: 1em;
+}
