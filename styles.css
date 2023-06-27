@@ -1,14 +1,56 @@
+.container {
+    background-image: url(./images/x.png);
+}
 .codex{
-    width: 90dvh; 
+    width: 40dvh; 
       height: auto; 
 }
 
 .bootcamp {
-    width: 25dvh;
+    width: 4.5em;
+    border-radius: 90%;
 }
 
 .btn-spacing {
     margin-right: 0.1em;
-    width: 5.4em;
+    width: 5em;
     font-size: 1em;
+    background-color: #00ff04;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    text-shadow: 1px 1px 2.2px rgb(0, 0, 0,0.8);
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.widget1 {
+    font-size: 6dvh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    border: 10px solid transparent;
+    border-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.5)
+      )
+      10;
+    box-shadow: 0 0 10px #00ff04;
+    text-shadow: 0 0 5px #00ff04, 0 0 10px #000000, 0 0 30px #000000;
+    margin-top: 2em;
+}
+
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: bold;
+}
+
+h4 {
+  text-decoration: underline;
 }

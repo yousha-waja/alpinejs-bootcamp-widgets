@@ -1,16 +1,6 @@
-
-   document.addEventListener("alpine:init", () => {
-    Alpine.data('greet', ()=>({
-      visibleG:false,
-      inputG:true,
-      messageG:false,
-      name : '',
-      hello(){
-        let input = document.querySelector('input').value
-        if(input != ''){
-            this.inputG = false,
-            this.messageG=true
-       }
-      },
-    }));
-  });
+function greet(name){
+  if(name.length == '' )
+  {return "No entry was made. Please enter name."} 
+   else
+   {return "Hello, "+name;}
+ }

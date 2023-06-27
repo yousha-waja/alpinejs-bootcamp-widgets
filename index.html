@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="./javascript/container.js"></script>
+    <script src="./javascript/greet.js"></script>
+    <script src="./javascript/transportFee.js"></script>
+    <script src="./javascript/bill.js"></script>
+    <script src="./javascript/airtime.js"></script>
+    <script src="./javascript/wordGame.js"></script>
+    <script src="./javascript/expensiveItems.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -15,13 +29,12 @@
         var instances = M.Sidenav.init(elems, options);
       });
     </script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="./javascript/greet.js"></script>
+
     <link rel="stylesheet" href="./styles.css" />
     <title>Bootcamp Widget using alpineJS</title>
   </head>
   <body>
-    <div class="container" x-data="greet">
+    <div class="container" x-data="container">
       <div class="row center">
         <img
           class="responsive-img center codex"
@@ -45,39 +58,54 @@
               <li>
                 <button
                   class="btn-large waves-effect waves-light btn-spacing"
-                  x-on:click="visibleG= true"
+                  x-on:click="visible1 = !visible1; visible2 = false; visible3 = false; visible4 = false; visible5=false; visible6 = false"
                 >
                   Greet
                 </button>
               </li>
               <li>
-                <button class="btn-large waves-effect waves-light btn-spacing">
-                  Greet
+                <button
+                  class="btn-large waves-effect waves-light btn-spacing"
+                  style="font-size: 0.9em; width: 8.5em"
+                  x-on:click="visible2= !visible2; visible1=false; visible3=false; visible4 = false; visible5=false; visible6 = false"
+                >
+                  Transport Fee
                 </button>
               </li>
               <li>
-                <button class="btn-large waves-effect waves-light btn-spacing">
-                  Greet
+                <button
+                  class="btn-large waves-effect waves-light btn-spacing"
+                  style="font-size: 0.9em; width: 7em"
+                  x-on:click="visible3= !visible3; visible1=false; visible2= false; visible4 = false; visible5=false; visible6 = false"
+                >
+                  Phone Bill
                 </button>
               </li>
               <li>
-                <button class="btn-large waves-effect waves-light btn-spacing">
-                  Greet
+                <button
+                  class="btn-large waves-effect waves-light btn-spacing"
+                  x-on:click="visible4= !visible4; visible1=false; visible2= false; visible3=false; visible5=false; visible6 = false"
+                  style="font-size: 0.9em; width: 8.5em"
+                >
+                  Airtime Usage
                 </button>
               </li>
               <li>
-                <button class="btn-large waves-effect waves-light btn-spacing">
-                  Greet
+                <button
+                  class="btn-large waves-effect waves-light btn-spacing"
+                  x-on:click="visible5= !visible5; visible1=false; visible2= false; visible3=false; visible4=false; visible6 = false"
+                  style="font-size: 0.9em; width: 7em"
+                >
+                  Word Game
                 </button>
               </li>
               <li>
-                <button class="btn-large waves-effect waves-light btn-spacing">
-                  Greet
-                </button>
-              </li>
-              <li>
-                <button class="btn-large waves-effect waves-light btn-spacing">
-                  Greet
+                <button
+                  class="btn-large waves-effect waves-light btn-spacing"
+                  x-on:click="visible6= !visible6; visible1=false; visible2= false; visible3=false; visible4=false; visible5 = false"
+                  style="font-size: 0.9em; width: 9em"
+                >
+                  Expensive Items
                 </button>
               </li>
             </ul>
@@ -85,42 +113,266 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <li>
+            <a
+              x-on:click="visible1 = !visible1; visible2 = false; visible3 = false; visible4 = false; visible5=false; visible6 = false"
+            >
+              Greet
+            </a>
+          </li>
+          <li>
+            <a
+              x-on:click="visible2= !visible2; visible1=false; visible3=false; visible4 = false; visible5=false; visible6 = false"
+              >Transport Fee</a
+            >
+          </li>
+          <li>
+            <a
+              x-on:click="visible3= !visible3; visible1=false; visible2= false; visible4 = false; visible5=false; visible6 = false"
+              >Phone bill</a
+            >
+          </li>
+          <li>
+            <a
+              x-on:click="visible4= !visible4; visible1=false; visible2= false; visible3=false; visible5=false; visible6 = false"
+              >Airtime usage</a
+            >
+          </li>
+          <li>
+            <a
+              x-on:click="visible5= !visible5; visible1=false; visible2= false; visible3=false; visible4=false; visible6 = false"
+              >Word game</a
+            >
+          </li>
+          <li>
+            <a
+              x-on:click="visible6= !visible6; visible1=false; visible2= false; visible3=false; visible4=false; visible5 = false"
+              >Expansive items</a
+            >
+          </li>
         </ul>
       </div>
-      <div class="row center" x-show="visibleG">
-        <form x-show="inputG" x-on:submit.prevent="hello">
+
+      <!-- Greet function -->
+      <div class="row center" x-show="visible1">
+        <div style="margin-bottom: 20px">
+          <form x-on:submit.prevent="hello()">
+            <input
+              type="text"
+              placeholder="Enter your name"
+              x-model="name"
+              required
+            />
+            <button type="submit" x-on:click="hello()">Submit</button>
+          </form>
+        </div>
+        <span
+          class="light-green accent-3 white-text widget1"
+          x-show="message1"
+          x-text="answer1"
+        >
+        </span>
+        <template x-if="showButton1">
+          <div class="fixed-action-btn">
+            <a class="btn-floating red" x-on:click="reset1">
+              <i class="large material-icons" style="font-size: 1em">Reset</i>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <!-- Transport function -->
+      <div class="row center" x-show="visible2">
+        <div style="margin-bottom: 20px">
+          <form x-on:submit.prevent="slot()">
+            <input
+              type="text"
+              placeholder="Enter your work shift to determine your transport fee."
+              x-model="shift"
+              required
+            />
+            <button type="submit" x-on:click="slot()">Submit</button>
+          </form>
+        </div>
+        <span
+          class="light-green accent-3 white-text widget1"
+          x-show="message2"
+          x-html="answer2"
+        >
+        </span>
+        <template x-if="showButton2">
+          <div class="fixed-action-btn">
+            <a class="btn-floating red" x-on:click="reset2">
+              <i class="large material-icons" style="font-size: 1em">Reset</i>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <!-- Phone bill function -->
+      <div class="row center" x-show="visible3">
+        <div style="margin-bottom: 20px">
+          <form x-on:submit.prevent="total">
+            <input
+              type="text"
+              placeholder="Enter your data usage, each call or sms should be separate by a comma."
+              x-model="bill"
+              required
+            />
+            <button type="submit" x-on:click="total">Submit</button>
+          </form>
+        </div>
+        <span
+          class="light-green accent-3 white-text widget1"
+          x-show="message3"
+          x-html="answer3"
+        >
+        </span>
+        <template x-if="showButton3">
+          <div class="fixed-action-btn">
+            <a class="btn-floating red" x-on:click="reset3">
+              <i class="large material-icons" style="font-size: 1em">Reset</i>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <!-- Airtime function -->
+      <div class="row center" x-show="visible4">
+        <div style="margin-bottom: 20px">
+          <form x-on:submit.prevent="isEnough">
+            <input
+              type="text"
+              placeholder="Enter your projected airtime usage, each call, sms or data should be separate by a comma."
+              x-model="data"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Enter the amount of airtime you have available."
+              x-model="airtime"
+              required
+            />
+            <button type="submit" x-on:click="isEnough">Submit</button>
+          </form>
+        </div>
+        <span
+          class="light-green accent-3 white-text widget1"
+          x-show="message4"
+          x-html="answer4"
+        >
+        </span>
+        <template x-if="showButton4">
+          <div class="fixed-action-btn">
+            <a class="btn-floating red" x-on:click="reset4">
+              <i class="large material-icons" style="font-size: 1em">Reset</i>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <!-- Word game function -->
+      <div class="row center" x-show="visible5">
+        <div style="margin-bottom: 20px">
+          <form x-on:submit.prevent="isEnough">
+            <input
+              type="text"
+              placeholder="Enter a Sentence, then press a button based on your desired result. "
+              x-model="word"
+              required
+            />
+            <button type="submit" x-on:click="longest">Longest word</button>
+            <button type="submit" x-on:click="shortest">Shortest word</button>
+            <button type="submit" x-on:click="wordCount">Word count</button>
+          </form>
+        </div>
+        <span
+          class="light-green accent-3 white-text widget1"
+          x-show="message5"
+          x-html="answer5"
+        >
+        </span>
+        <template x-if="showButton5">
+          <div class="fixed-action-btn">
+            <a class="btn-floating red" x-on:click="reset5">
+              <i class="large material-icons" style="font-size: 1em">Reset</i>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <!-- Expensive item function -->
+      <div class="row center" x-show="visible6">
+        <form @submit.prevent="addItem">
           <input
             type="text"
-            class="input"
-            placeholder="Enter your name"
-            x-model="name"
+            id="itemName"
+            x-model="itemName"
+            placeholder="Enter item name"
+            title="Please enter only letters and spaces"
             required
           />
-          <button type="submit" x-on:click="hello">Submit</button>
+          <input
+            type="number"
+            id="itemQty"
+            x-model.number="itemQty"
+            placeholder="Enter item quantity."
+            title="Please enter a valid number"
+            required
+          />
+          <button
+            type="submit"
+            x-on:click="addItem; over20=true"
+            x-bind:disabled="!itemName || !itemQty"
+          >
+            Add Item
+          </button>
         </form>
-        <span
-          class="light-green accent-3 white-text"
-          style="
-            font-size: 15dvh;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-              'Lucida Sans', Arial, sans-serif;
-            border: 10px solid transparent;
-            border-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0.5)
-              )
-              10;
-            box-shadow: 0 0 10px #00ff04;
-          "
-          x-show="messageG"
-          x-text="'Hello ' + name"
-          ></span
+        <input
+          type="number"
+          x-model.number="threshold"
+          x-show="over20"
+          placeholder="Enter threshold value."
+          required
+        />
+        <button type="submit" x-show="over20" x-on:click="overTwenty">
+          Items with a count higher than 20
+        </button>
+        <button
+          type="submit"
+          x-show="over20"
+          x-on:click="overThreshold"
+          x-bind:disabled="!threshold"
         >
+          Items with a count higher than threshold value.
+        </button>
+        <div class="row">
+          <div class="col s6 m6" x-show="itemList.length > 0">
+            <h3>Item List:</h3>
+            <ol>
+              <template x-for="(item, index) in itemList" :key="index">
+                <li x-text="`Item: ${item.name} - Quantity: ${item.qty}`"></li>
+              </template>
+            </ol>
+          </div>
+          <div class="col s6 m6" x-show="message6">
+            <span
+              class="light-green accent-3 white-text widget1"
+              x-html="answer6"
+              style="font-size: 4dvh; display: block"
+              >Items with quantities > 20
+            </span>
+            <template x-if="showButton6">
+              <div class="fixed-action-btn">
+                <a class="btn-floating red" x-on:click="reset6">
+                  <i class="large material-icons" style="font-size: 1em"
+                    >Reset</i
+                  >
+                </a>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
     </div>
   </body>
