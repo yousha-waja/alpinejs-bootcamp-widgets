@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./javascript/container.js"></script>
     <script src="./javascript/greet.js"></script>
     <script src="./javascript/transportFee.js"></script>
@@ -59,6 +64,7 @@
                 <button
                   class="btn-large waves-effect waves-light btn-spacing"
                   x-on:click="visible1 = !visible1; visible2 = false; visible3 = false; visible4 = false; visible5=false; visible6 = false"
+                  style="font-size: 0.9em; width: 7em"
                 >
                   Greet
                 </button>
@@ -103,9 +109,9 @@
                 <button
                   class="btn-large waves-effect waves-light btn-spacing"
                   x-on:click="visible6= !visible6; visible1=false; visible2= false; visible3=false; visible4=false; visible5 = false"
-                  style="font-size: 0.9em; width: 9em"
+                  style="font-size: 0.9em; width: 7em"
                 >
-                  Expensive Items
+                  Items Count
                 </button>
               </li>
             </ul>
@@ -147,7 +153,7 @@
           <li>
             <a
               x-on:click="visible6= !visible6; visible1=false; visible2= false; visible3=false; visible4=false; visible5 = false"
-              >Expansive items</a
+              >Items Count</a
             >
           </li>
         </ul>
@@ -359,7 +365,7 @@
             <span
               class="light-green accent-3 white-text widget1"
               x-html="answer6"
-              style="font-size: 4dvh; display: block"
+              style="font-size: 1em; display: block"
               >Items with quantities > 20
             </span>
             <template x-if="showButton6">

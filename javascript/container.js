@@ -145,7 +145,8 @@ overThreshold() {
 reset6(){
   this.message6 = false;
   this.showButton6 = false;
-  this.answer6=''
+  this.answer6='';
+  this.threshold='';
 }
 
     }));
