@@ -12,6 +12,7 @@ document.addEventListener("alpine:init", () => {
            this.answer1 = greet(this.name);
            this.message1=true;
            this.showButton1=true;
+           this.name = '';
       },
       reset1(){
         this.message1 = false;
@@ -30,6 +31,7 @@ document.addEventListener("alpine:init", () => {
         this.answer2 = transportFee(this.shift);
         this.message2 = true;
         this.showButton2=true;
+        this.shift = '';
       },
 
       reset2(){
@@ -49,6 +51,7 @@ document.addEventListener("alpine:init", () => {
         this.answer3 = totalPhoneBill(this.bill);
         this.message3 = true;
         this.showButton3=true;
+        this.bill = ''; 
       },
 
       reset3(){
@@ -69,6 +72,8 @@ document.addEventListener("alpine:init", () => {
         this.answer4 = enoughAirtime(this.data,this.airtime);
         this.message4 = true;
         this.showButton4=true;
+        this.airtime = ''; 
+        this.data = '';
       },
 
       reset4(){
@@ -140,6 +145,7 @@ overThreshold() {
   this.answer6 = `<h4>Items with a count higher than the threshold:</h4><ol>${items}</ol>`;
   this.message6 = true;
   this.showButton6 = true;
+  this.threshold='';
 }
 ,
 reset6(){

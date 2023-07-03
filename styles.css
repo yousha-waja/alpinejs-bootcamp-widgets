@@ -45,6 +45,38 @@
     margin-top: 2em;
 }
 
+.errorMessage {
+    font-size: 6dvh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    border: 10px solid transparent;
+    border-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.5)
+      )
+      10;
+    box-shadow: 0 0 10px #ff0000;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0303, 0 0 30px #ff0202;
+    background-color: #ff0000;
+}
+
+.caution {
+  font-size: 6dvh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  border: 10px solid transparent;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    )
+    10;
+  box-shadow: 0 0 10px #fbff00;
+  text-shadow: 0 0 5px #fbff00, 0 0 10px #000000, 0 0 30px #000000;
+  background-color: #ffdd00;
+}
+
 
 input::placeholder {
   color: rgba(0, 0, 0, 0.45);

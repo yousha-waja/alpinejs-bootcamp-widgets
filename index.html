@@ -175,7 +175,7 @@
         <span
           class="light-green accent-3 white-text widget1"
           x-show="message1"
-          x-text="answer1"
+          x-html="answer1"
         >
         </span>
         <template x-if="showButton1">
@@ -259,7 +259,7 @@
               x-model="airtime"
               required
             />
-            <button type="submit" x-on:click="isEnough">Submit</button>
+            <button type="submit" x-on:click="isEnough" :disabled="!data || !airtime">Submit</button>
           </form>
         </div>
         <span

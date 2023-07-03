@@ -1,5 +1,6 @@
 function transportFee(shift) {
-  switch (shift.toLowerCase()) {
+  if(shift != '') {
+    switch (shift.toLowerCase()) {
     case "morning":
       return "Transport fee = R20";
     case "afternoon":
@@ -7,6 +8,10 @@ function transportFee(shift) {
     case "nightshift":
       return "Transport fee is free";
     default:
-      return "Invalid shift, <br> valid shifts: <br> (morning, afternoon, nightshift)";
+      return '<span class="errorMessage"> Invalid shift,</span> <br> valid shifts:(morning, afternoon, nightshift)';
+   }
+  } 
+  else {
+    return "<span class='caution'>No entry was made!</span>";
   }
 }

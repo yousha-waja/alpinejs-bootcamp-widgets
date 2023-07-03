@@ -8,12 +8,12 @@ function totalPhoneBill(string) {
         } else if (data[i].trim().toLowerCase() === 'sms') {
           total += 0.65;
         } else {
-          return "Invalid input. The input must include 'sms' or 'call' separated by a comma.";
+          return "<span class='errorMessage'>Invalid input. The input must include 'sms' or 'call' separated by a comma.</span>";
         }
       }
       return ("Your phone bill is R" + total.toFixed(2));
     } else {
-      return "Please enter a valid input. e.g.: 'sms,call,call,call,sms'";
+      return "<span class='caution'>No entry was made.</span> <br> e.g. of valid entry: 'sms,call,call,call,sms'";
     }
   }
   

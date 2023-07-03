@@ -18,7 +18,7 @@ function enoughAirtime(string,integer){
          total+= 0.75;
        }
        else {
-        return "Please enter a valid input for your projected data usage. e.g.: 'sms,call,call,Data,SMS'";
+        return "<span class='errorMessage'>Please enter a valid input for your projected usage.</span><br> e.g.: 'sms,call,call,Data,SMS'";
       }
        
      }
@@ -26,14 +26,14 @@ function enoughAirtime(string,integer){
        if(total<integer){
          return ("You will have R"+(integer-total).toFixed(2)+ " worth of airtime available after your projected usage.");
          }else {
-           return ("You do not have enough airtime. <br> Your require R"+(total-integer).toFixed(2)+ " additional airtime for your projected data usage");
+           return ("<span class='caution'> You do not have enough airtime. <br> Your require R"+(total-integer).toFixed(2)+ " additional airtime for your projected data usage</span>");
          }
     } 
     else if(string !== '' && integer == '') {
-        return "Please enter the amount of airtime you have available.";
+        return "Did not enter the amount of airtime you have available.";
       }
     else if(string == '' && integer !== '') {
-        return "Please enter a valid input for your projected data usage. e.g.: 'sms,call,data,Data,sms'";
+        return "Did not enter a valid input for your projected data usage. e.g.: 'sms,call,data,Data,sms'";
       }
     else {
         return "No entries were made.";
